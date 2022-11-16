@@ -1,5 +1,7 @@
 package com.reiscompsvm.sevenminutes
 
+import android.app.Dialog
+import android.content.Intent
 import android.media.MediaPlayer
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +13,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.reiscompsvm.sevenminutes.databinding.ActivityExerciseActvitiyBinding
+import com.reiscompsvm.sevenminutes.databinding.DialogCustomBackConfirmationBinding
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -42,7 +45,7 @@ class ExerciseActvitiy : AppCompatActivity(), TextToSpeech.OnInitListener {
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }
         binding?.toolbarExercise?.setNavigationOnClickListener {
-            onBackPressed()
+            customDialogForBackButton()
         }
 
 
@@ -53,6 +56,25 @@ class ExerciseActvitiy : AppCompatActivity(), TextToSpeech.OnInitListener {
         setupRestView()
     }
 
+    private fun customDialogForBackButton() {
+        val customDialog = Dialog(this)
+        //Todo 3: create a binding variable
+        val dialogBinding = DialogCustomBackConfirmationBinding.inflate(layoutInflater)
+
+        customDialog.setContentView(dialogBinding.root)
+
+        customDialog.setCanceledOnTouchOutside(false)
+        dialogBinding.tvYes.setOnClickListener {
+
+            this@ExerciseActvitiy.finish()
+            customDialog.dismiss() // Dialog will be dismissed
+        }
+        dialogBinding.tvNo.setOnClickListener {
+            customDialog.dismiss()
+        }
+
+        customDialog.show()
+    }
 
 
     private fun setupRestView() {
@@ -100,8 +122,14 @@ class ExerciseActvitiy : AppCompatActivity(), TextToSpeech.OnInitListener {
 
             override fun onFinish() {
 
+                exerciseList!![currentExercisePosition].setIsSelected(false)
+                exerciseList!![currentExercisePosition].setIsCompleted(true)
+                exerciseAdapter!!.notifyDataSetChanged()
                 currentExercisePosition++
+                exerciseList!![currentExercisePosition].setIsSelected(true)
+                exerciseAdapter!!.notifyDataSetChanged()
                 setupExerciseView()
+
             }
         }.start()
     }
@@ -145,14 +173,14 @@ class ExerciseActvitiy : AppCompatActivity(), TextToSpeech.OnInitListener {
             override fun onFinish() {
 
                 if (currentExercisePosition < exerciseList?.size!! - 1) {
+                    exerciseList!![currentExercisePosition].setIsSelected(false) // exercise is completed so selection is set to false
+                    exerciseList!![currentExercisePosition].setIsCompleted(true) // updating in the list that this exercise is completed
+                    exerciseAdapter?.notifyDataSetChanged()
                     setupRestView()
                 } else {
-
-                    Toast.makeText(
-                        this@ExerciseActvitiy,
-                        "Congratulations! You have completed the 7 minutes workout.",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    finish()
+                    val intent = Intent(this@ExerciseActvitiy,FinishActivity::class.java)
+                    startActivity(intent)
                 }
                 // END
             }
