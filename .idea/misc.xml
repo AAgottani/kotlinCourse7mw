@@ -5,6 +5,9 @@
       <map>
         <entry key="..\:/Users/CPU/AndroidStudioProjects/SevenMinutes/app/src/main/res/drawable/circular_progress_bar.xml" value="0.1615" />
         <entry key="..\:/Users/CPU/AndroidStudioProjects/SevenMinutes/app/src/main/res/drawable/circular_progress_gray.xml" value="0.1615" />
+        <entry key="..\:/Users/CPU/AndroidStudioProjects/SevenMinutes/app/src/main/res/drawable/drawable_radio_group_tab_background.xml" value="0.1775" />
+        <entry key="..\:/Users/CPU/AndroidStudioProjects/SevenMinutes/app/src/main/res/drawable/drawable_units_tab_selector.xml" value="0.1775" />
+        <entry key="..\:/Users/CPU/AndroidStudioProjects/SevenMinutes/app/src/main/res/drawable/drawable_units_tab_text_color_selector.xml" value="0.1775" />
         <entry key="..\:/Users/CPU/AndroidStudioProjects/SevenMinutes/app/src/main/res/drawable/item_circular_color_accent_background.xml" value="0.1615" />
         <entry key="..\:/Users/CPU/AndroidStudioProjects/SevenMinutes/app/src/main/res/drawable/item_circular_color_accent_border.xml" value="0.1615" />
         <entry key="..\:/Users/CPU/AndroidStudioProjects/SevenMinutes/app/src/main/res/drawable/item_circular_color_gray_background.xml" value="0.1965" />
@@ -13,6 +16,7 @@
         <entry key="..\:/Users/CPU/AndroidStudioProjects/SevenMinutes/app/src/main/res/layout/activity_bmiactivity.xml" value="0.203125" />
         <entry key="..\:/Users/CPU/AndroidStudioProjects/SevenMinutes/app/src/main/res/layout/activity_exercise_actvitiy.xml" value="0.203125" />
         <entry key="..\:/Users/CPU/AndroidStudioProjects/SevenMinutes/app/src/main/res/layout/activity_finish.xml" value="0.203125" />
+        <entry key="..\:/Users/CPU/AndroidStudioProjects/SevenMinutes/app/src/main/res/layout/activity_history.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/CPU/AndroidStudioProjects/SevenMinutes/app/src/main/res/layout/activity_main.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/CPU/AndroidStudioProjects/SevenMinutes/app/src/main/res/layout/dialog_custom_back_confirmation.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/CPU/AndroidStudioProjects/SevenMinutes/app/src/main/res/layout/item_exercise_status.xml" value="0.203125" />
